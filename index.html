@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triggering Flow...</title>
+  </head>
+  <body>
+    <h2>Committing changes to master salesreturn database</h2>
+    <script>
+      fetch("https://prod-15.centralindia.logic.azure.com:443/workflows/685a3c7a632441b986be6fa501c6e99e/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0yKRCanWPBdInXtyNFizhjjmSFAltkmlls2UA-VfMbU", {
+        method: "POST"
+      })
+      .then(response => {
+        document.body.innerHTML += "<p>✅ Updates successful!</p>";
+      })
+      .catch(error => {
+        document.body.innerHTML += "<p>❌ Error updating.</p>";
+      });
+    </script>
+  </body>
+</html>
